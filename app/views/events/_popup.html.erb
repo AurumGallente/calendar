@@ -1,0 +1,15 @@
+<% events = @events.to_a %>
+<table class="table">
+<% events[0..4].each do |event| %>
+  <tr>
+    
+    <td><p class="btn pop" id ="<%= event.id %>" data-placement="right" data-trigger="hover" data-toggle="popover" data-content=" " data-original-title="participants"><%= event.name %></p></td>
+    <td><p><small><%= event.eventdate.strftime("%H:%M:%S") %></small></p>
+        <p><small><%= event.text %></small></p></td>
+    <td><p><small><%= event.user.email %></small></p></td>
+    <td><p><small><%= image_tag event.user.avatar_url(:thumb).to_s, :class => 'preview', :size => '50' if event.user.avatar %></small></p></td>
+    
+  </tr>
+<% end %>
+</table>
+<%= link_to 'New Event', new_with_date_events_path(@date), :remote => true %>

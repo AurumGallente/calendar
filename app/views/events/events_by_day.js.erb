@@ -1,0 +1,4 @@
+$(".modal-body").html("<%= escape_javascript( render :partial => 'events/popup', :events => @events, :date => @date) %> ");
+$('.modal').modal('toggle');
+$(".modal-footer").html("<%= @date %> ");
+$(".h3modal").html("<%= escape_javascript  @date.to_date.strftime("%Y %B %d") %> events");

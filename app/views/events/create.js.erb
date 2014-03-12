@@ -1,0 +1,3 @@
+$('.modal').modal('toggle');
+$('#<%= @date.strftime("%Y-%m").to_s  %>').html("<%= escape_javascript( render :partial => 'events/monthrender', :date => @date, :events_by_date => @events_by_date ) %>");
+$('.evented').parent().closest('td').addClass('evented'); 

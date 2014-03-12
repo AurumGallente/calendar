@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @event.name %>
+</p>
+
+<p>
+  <strong>Eventdate:</strong>
+  <%= @event.eventdate %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @event.user.email %>
+</p>
+
+<ul>
+<% @event.participants.each do |p| %>
+  <li><%= p.email %>
+      <%= image_tag p.avatar_url(:thumb).to_s.gsub(/participant/, 'user'), :class => 'preview', :size => '50' if p.avatar %>
+  </li>
+<% end %>
+</ul>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

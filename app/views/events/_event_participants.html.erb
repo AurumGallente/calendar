@@ -1,0 +1,7 @@
+<ul>
+<% @event.participants.each do |p| %>
+  <li><%= p.name %>
+      <%= image_tag p.avatar_url(:thumb).to_s.gsub(/participant/, 'user'), :class => 'preview', :size => '50' if p.avatar %>
+  </li>
+<% end %>
+</ul>

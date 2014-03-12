@@ -1,0 +1,9 @@
+$('.modal').modal('toggle');
+setTimeout(
+  function() 
+  {
+   $('.modal').modal('toggle'); 
+   $(".modal-body").html("<%= escape_javascript( render :partial => 'events/form', :event => @event, :date => @date) %> ");
+   $('#datetimepicker1').datetimepicker({ language: 'en' });
+   $(".bootstrap-datetimepicker-widget").css('z-index', '9999');
+  }, 500);

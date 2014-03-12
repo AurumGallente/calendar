@@ -1,0 +1,20 @@
+  <div id="<%= @date.strftime("%Y-%m") %>">
+    <h2 id="month">
+
+      <%= @date.strftime("%B %Y") %>
+
+    </h2>
+    <%= calendar @date do |date| %>
+      <%= date.day %>
+
+      <% if @events_by_date[date] %>
+        <div class="evented">
+        <ul>
+          <% @events_by_date[date].each do |event| %>
+            <li><%= event.name %></li>
+          <% end %>
+        </ul>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
