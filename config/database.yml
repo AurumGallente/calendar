@@ -19,8 +19,8 @@ development:
   encoding: unicode
   database: calendar_development
   pool: 5
-  username: aurum
-  password: sax4071505
+  username: user
+  password: pass
   template: template0
 
 test:
@@ -28,8 +28,8 @@ test:
   encoding: unicode
   database: calendar_test
   pool: 5
-  username: aurum
-  password: sax4071505
+  username: user
+  password: pass
   template: template0
 
   # Connect on a TCP socket. Omitted by default since the client uses a
